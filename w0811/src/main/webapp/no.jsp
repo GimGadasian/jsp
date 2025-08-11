@@ -15,7 +15,7 @@
 </head>
 <body>
 	<h2>you not adult</h2>
-	<table>
+	<table>  
 	<tr>   
 	<th>age</th>
 	<th>name</th>

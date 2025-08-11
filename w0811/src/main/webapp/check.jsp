@@ -11,7 +11,7 @@
 	<%
 	int age = Integer.parseInt(request.getParameter("age"));   
 	
-	String name = URLEncoder.encode(request.getParameter("name"));
+	String name = URLEncoder.encode(request.getParameter("name"));  
 	
 	if (age>=19) {
 		response.sendRedirect("./ok.jsp?age="+age+"&name="+name);
