@@ -11,10 +11,12 @@
 	<form action="/w0807/FormPage" method="post">
 	<label>ID</label>
 	<br>
-	<input type="text" id="userId" name="userId"><br>
+	<input type="text" id="userId" name="userId">
+<br>
 	<label>PW</label>
 	<br>
-	<input type="text" id="userPW" name="userPW"><br>
+	<input type="password" id="userPW" name="userPW">
+<br>
 	<br>
 	<input type="submit" value="submit"></form>
 </body>

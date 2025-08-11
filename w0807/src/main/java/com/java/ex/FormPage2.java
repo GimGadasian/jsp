@@ -11,24 +11,18 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class FormPage
  */
-@WebServlet("/FormPage")
-public class FormPage extends HttpServlet {
+@WebServlet("/FormPage2")
+public class FormPage2 extends HttpServlet {
 	
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doAction 실행");
+		String name = request.getParameter("name");
+		String korStr = request.getParameter("kor");
+		String engStr = request.getParameter("eng");
 		
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPost 실행");
-		doAction(request, response);
-	}
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet 실행");
-		doAction(request, response);
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		int kor = Integer.parseInt(korStr);
+		int eng = Integer.parseInt(engStr);
+		int total = kor + eng;
+		double avr = total / 2.0;
 		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter writer = response.getWriter();
@@ -39,14 +33,30 @@ public class FormPage extends HttpServlet {
 		writer.println("</head>");
 		writer.println("<body>");
 		writer.println("<h2>servlet page</h2>");
-		writer.println("<p>ID: "+id);
+		writer.println("<p>name: "+name);
 		writer.println("</p>");
-		writer.println("<p>PW: "+pw);
+		writer.println("<p>KOR: "+kor);
+		writer.println("</p>");
+		writer.println("<p>ENG: "+eng);
+		writer.println("</p>");
+		writer.println("<p>TOTAL: "+total);
+		writer.println("</p>");
+		writer.println("<p>AVR: "+avr);
 		writer.println("</p>");
 		writer.println("</body>");
 		writer.println("</html>");
 		
 		writer.close();
+		
+		
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doAction(request, response);
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doAction(request, response);
 	}
 	
 
