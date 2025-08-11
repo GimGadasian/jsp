@@ -15,10 +15,10 @@
 </head>
 <body>
 	<h2>you are adult</h2>
-	<table>
+	<table>    
 	<tr>
-	<th>age</th>
-	<th>name</th>
+	<th>age</th>   
+	<th>name</th>      
 	</tr>
 	<tr>
 	<td><%= request.getParameter("age") %></td>

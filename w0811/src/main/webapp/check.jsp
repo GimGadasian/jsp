@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%
-	int age = Integer.parseInt(request.getParameter("age"));
+	int age = Integer.parseInt(request.getParameter("age"));   
 	
 	String name = URLEncoder.encode(request.getParameter("name"));
 	
@@ -17,7 +17,7 @@
 		response.sendRedirect("./ok.jsp?age="+age+"&name="+name);
 	} else {
 		response.sendRedirect("./no.jsp?age="+age+"&name="+name);
-	}
+	}   
 	%>
 </body>
 </html>
